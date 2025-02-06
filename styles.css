@@ -1,0 +1,543 @@
+:root {
+    --max-width: 1200px;
+    --primary-color: #2A3B4C;
+    --accent-color: #4A90E2;
+    --text-color: #FFFFFF;
+    --background-color: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.background-text {
+    position: fixed;
+    font-size: clamp(200px, 40vw, 600px);
+    font-family: 'Mr Dafoe', cursive;
+    font-weight: normal;
+    opacity: 0.15;
+    color: var(--text-color);
+    z-index: 0;
+    user-select: none;
+    width: 100%;
+    text-align: center;
+    transform: rotate(-5deg);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(255,255,255,0.2);
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: clamp(18px, 3vw, 32px);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 30px auto;
+    opacity: 0.9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+}
+
+.utilities {
+    padding: 160px 0 120px;
+    text-align: center;
+}
+
+.utilities h2 {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.utilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.utility-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.utility-card:hover {
+    transform: translateY(-10px);
+}
+
+.utility-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.tokenomics {
+    padding: 120px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+}
+
+.tokenomics-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.tokenomics-info {
+    flex: 1;
+}
+
+.tokenomics-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: floatAnimation 6s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.tokenomics-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(165, 255, 0, 0.15));
+    transition: all 0.5s ease;
+}
+
+.tokenomics-image:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(165, 255, 0, 0.25));
+}
+
+.tokenomics h2 {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.tokenomics-details {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 60px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.tokenomics-details p {
+    display: flex;
+    gap: 8px;
+}
+
+.tokenomics-details p::after {
+    content: attr(data-value);
+    color: #a5ff00;
+}
+
+.community {
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.community h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.motto {
+    font-size: clamp(16px, 2.5vw, 24px);
+    opacity: 0.9;
+    margin: 20px 0;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 动画效果 */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #a5ff00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tokenomics-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .utilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subtitle {
+        font-size: clamp(16px, 4vw, 18px);
+        margin: 20px auto;
+    }
+
+    .motto {
+        font-size: clamp(14px, 3.5vw, 16px);
+        margin: 15px auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .tokenomics-content {
+        flex-direction: column;
+    }
+
+    .tokenomics h2,
+    .tokenomics-details {
+        text-align: center;
+    }
+
+    .tokenomics-details {
+        align-items: center;
+    }
+}
+
+.particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.glow-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(74, 144, 226, 0.2) 0%, 
+        rgba(74, 144, 226, 0.1) 40%,
+        transparent 70%);
+    opacity: 0.6;
+    animation: pulse 2s infinite;
+    filter: blur(10px);
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+}
+
+/* 其他部分样式... */
+
+.hero-image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+    max-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+.hero-image {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-position: center;
+    opacity: 1;
+    margin-top: 0;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+.utility-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.utility-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.utility-card:hover .utility-icon {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-social-link {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-social-link:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.footer-social-link img {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease;
+}
+
+.footer-social-link:hover img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(27%) saturate(1188%) hue-rotate(41deg) brightness(104%) contrast(106%);
+}
+
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 20px;
+}
+
+.copyright {
+    font-size: 14px;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.highlight {
+    color: #a5ff00;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroFloat {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, calc(-50% - 15px));
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    height: 40px;
+}
+
+.header-logo img {
+    height: 100%;
+    width: auto;
+}
+
+.header-social {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-social-link {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.header-social-link:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.header-social-link img {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease;
+}
+
+.header-social-link:hover img {
+    filter: brightness(0) saturate(100%) invert(88%) sepia(27%) saturate(1188%) hue-rotate(41deg) brightness(104%) contrast(106%);
+}
+
+/* 添加一些响应式调整 */
+@media (max-width: 768px) {
+    .header-logo {
+        height: 32px;
+    }
+
+    .header-social {
+        gap: 15px;
+    }
+
+    .header-social-link {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .motto {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+} 
